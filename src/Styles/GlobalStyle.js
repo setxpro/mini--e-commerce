@@ -8,4 +8,11 @@ export default createGlobalStyle`
         box-sizing: border-box;
         font-family: 'Josefin Sans', sans-serif;
     }
+
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: rgba(77, 77, 155, 0.3);
+    }
 `;

@@ -1,10 +1,10 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import { BTN } from './styles';
 
 function Button(props) {
   return (
-      <button>{props.name}</button>
+      <BTN>{props.name}</BTN>
   );
 }
 
