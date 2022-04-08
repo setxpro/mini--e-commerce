@@ -22,7 +22,7 @@ function FilterNav() {
             onChange={e => setFilterProduct(e.target.value)}
             />
           <C.AreaRegister>
-            <Link to="/contact">CONTATO</Link>
+            <Link to="/contact">ENVIE  SUA ARTE</Link>
             <Link to="/register">REGISTER</Link>
             <Link to="/login">LOGIN</Link>
             <div className='store-length'>
