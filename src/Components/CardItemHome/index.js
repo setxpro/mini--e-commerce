@@ -3,6 +3,7 @@ import Spinner from '../../utils/Spinner';
 
 import * as C from './styles';
 import * as Icon from './styles';
+import { Link } from 'react-router-dom';
 
 function CardItemHome(props) {
 
@@ -10,15 +11,13 @@ function CardItemHome(props) {
 
   useEffect(() => {
     setLoading(true);
-   
     setLoading(false);
   },[])
 
   return (
     <>
     {loading ? <Spinner/> : 
-    
-    <C.Container>
+      <C.Container>
             <img src={props.photo} alt=''/>
             <p>{props.name}</p>
         <C.StarsArea>
@@ -28,8 +27,7 @@ function CardItemHome(props) {
             <div className='total-views'>{props.views} views</div>
         </C.StarsArea>
             <span>R$ {props.price},00</span>
-    </C.Container>
-    
+      </C.Container>
     }
     </>
   );

@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { Produtos } from "../data/Produtos";
 
 export const FilterContext = createContext();

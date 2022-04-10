@@ -3,6 +3,7 @@ import CardItemHome from '../../Components/CardItemHome';
 
 import * as C from './styles';
 import { FilterContext } from '../../Context/FilterContext';
+import { Link } from 'react-router-dom';
 
 function Home() {
 
@@ -13,14 +14,15 @@ function Home() {
       <h2>Produtos</h2>
       <C.Container>
         {product.map((item, index) => (
-          <CardItemHome
-            key={index}
-            name={item.name}
-            photo={item.photo}
-            price={item.price}
-            stars={item.stars}
-            views={item.views}
-          />
+         <Link to={`/info/${item.id_prod}`} key={index}>
+            <CardItemHome
+              name={item.name}
+              photo={item.photo}
+              price={item.price}
+              stars={item.stars}
+              views={item.views}
+            />
+         </Link>
         ))}
       </C.Container>
     </>
