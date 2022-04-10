@@ -11,11 +11,15 @@ export const Container = styled.div`
     
     section {
         display: flex;
+
+        :nth-child(2) {
+            flex-direction: column;
+        }
     }
 `;
 export const AreaImage = styled.div`
     width: 515px;
-    height: 550px;
+    height: 500px;
     background-color: #DDD;
     display: flex;
     justify-content: center;
@@ -42,17 +46,17 @@ export const AreaMoreInfo = styled.div`
 `;
 export const AreaInfoDescription = styled.div`
     > div {
-        width: 400px;
+        width: 95%;
         display: flex;
         justify-content: space-between;
         padding: 10px;
         border: 1px solid rgba(77, 77, 155, 0.2);
         border-radius: 5px;
 
-        select {
-            width: 35px;
-            height: 35px;
 
+        select {
+            width: 45px;
+            height: 35px;
             outline: none;
             border: none;
             border-radius: 5px;
@@ -138,4 +142,25 @@ export const AreaBoleto = styled.div`
     p {
         margin-bottom: 1rem;
     }
+`;
+
+export const AreaRegister = styled.div`
+      
+    background-color: #fff3cd;
+    border-color: #ffecb5;
+    border-radius: 8px;
+    padding: 5px 10px;
+    width: 90%;
+    
+    h5 {
+        font-size: 1rem;
+        font-weight: 300;
+    }
+
+    a {
+        text-decoration: none;
+        font-size: 1rem;
+        color: #664d03;
+    }
+        
 `;

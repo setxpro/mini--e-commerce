@@ -12,6 +12,21 @@ export const Container = styled.div`
         width: 310px;
         height: 255px;
         background-color: #DDD;
+        animation: slide-in-fwd-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+    @keyframes slide-in-fwd-center {
+        0% {
+            -webkit-transform: translateZ(-1400px);
+                    transform: translateZ(-1400px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-transform: translateZ(0);
+                    transform: translateZ(0);
+            opacity: 1;
+        }
+    }
+
     }
     
     p {
@@ -39,6 +54,8 @@ export const StarsArea = styled.div`
         color: #444;
     }
 `;
+
+
 
 export const Star = styled(FiStar)`
     color: #ff0;

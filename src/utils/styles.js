@@ -1,6 +1,14 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
   .lds-heart {
   display: inline-block;
   position: relative;
@@ -15,7 +23,7 @@ export const Container = styled.div`
   position: absolute;
   width: 32px;
   height: 32px;
-  background: #f00;
+  background: #444DDD;
   animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .lds-heart div:after,
@@ -25,7 +33,7 @@ export const Container = styled.div`
   display: block;
   width: 32px;
   height: 32px;
-  background: #f00;
+  background: #444DDD;
 }
 .lds-heart div:before {
   left: -24px;

@@ -12,6 +12,7 @@ function Contact() {
     const [message, setMessage] = useState('');
     const [upload, setUpload] = useState(false);
 
+    const handleUploadFile = (e) => setUpload(e.target.files[0]);
 
     return (
         <C.Container>
@@ -57,6 +58,8 @@ function Contact() {
                     <input 
                         type="file" 
                         name="arte"
+                        accept="application/pdf"
+                        onChange={handleUploadFile}
                     />
                 <Button name="enviar"/>
             </form>

@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Produtos } from '../../data/Produtos';
 import { Layout } from '../../Styles/Layout/styles';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+
+import Spinner from '../../utils/Spinner';
 
 import * as C from './styles';
+import Comments from '../../Components/Comments';
 
 function InformationProduct() {
 
@@ -20,6 +23,7 @@ function InformationProduct() {
                 photo: prod.photo,
                 description: prod.description,
                 price: prod.price,
+                countInStock: prod.countInStock,
             });
             setLoadingProd(false);
         }
@@ -29,6 +33,7 @@ function InformationProduct() {
 
   return (
       <Layout>
+          {loadindProd ? <Spinner/> : 
           <C.Container>
             <section>
                 <C.AreaImage>
@@ -43,14 +48,18 @@ function InformationProduct() {
                                 <div><p>Preço</p> <span>R$ {produto.price}</span> </div>
                                 <div><p>Status</p> <span>Ativo</span></div>
                                 <div><p>Avaliação</p> ***** </div>
+                                <div><p>Estoque</p> <span>{produto.countInStock}</span></div>
+                                {produto.countInStock > 0 ? (
                                 <div>Unidade
                                     <select>
-                                       <option>1</option>
-                                       <option>2</option>
-                                       <option>3</option>
-                                       <option>4</option>
-                                    </select>
+                                        {[...Array(produto.countInStock).keys()].map((i) => (
+                                            <option key={i + 1} value={i + 1}>
+                                                {i + 1}
+                                            </option>
+                                        ))}
+                                    </select>  
                                 </div>
+                                 ) : alert('Não há mais unidades no estoque :(')}
                                 <button>Adicionar ao Carrinho</button>
                             </C.AreaInfoDescription>
 
@@ -82,21 +91,41 @@ function InformationProduct() {
                                         <img src="https://http2.mlstatic.com/secure/payment-logos/v2/payment-logo-mlb-bolbradesco-medium_v_04d70df495.png" alt='boleto'/>
                                     </C.AreaBoleto>
                             </div>
-
-
                         </C.AreaFormPayment>
 
-
                     </C.AreaMoreInfo>
-                    <div>
-                        {/* TO WRITE A CUSTOMER REVIEW*/}
-                    </div>
+                    <C.AreaRegister>
+                        <h5>Cadastre-se para Comentar e receber notificações sobre descontos e novos produtos</h5>
+                        <Link to="/register">Cadastrar</Link>
+                    </C.AreaRegister>
                 </C.AreaInfo>
             </section>
             <section>
-
+              
+                <Comments
+                    
+                />
+                <Comments
+                    
+                />
+                <Comments
+                    
+                />
+                <Comments
+                    
+                />
+                <Comments
+                    
+                />
+                <Comments
+                    
+                />
+                <Comments
+                    
+                />
             </section>
           </C.Container>
+          }
       </Layout>
   );
 }
