@@ -5,6 +5,7 @@ import Register from './screens/Register';
 import Login from './screens/Login';
 import Contact from './screens/Contact';
 import InformationProduct from './screens/InformationProduct';
+import CartScreen from './screens/Cart';
 
 export const Router = () => {
     return (
@@ -14,7 +15,7 @@ export const Router = () => {
             <Route path='/info/:id' element={<InformationProduct/>}/>
             <Route path='/register' element={<Register/>}/>
             <Route path='/login' element={<Login/>}/>
-            <Route path='/cart'/>
+            <Route path='/cart' element={<CartScreen/>}/>
         </Routes>
     )
 }

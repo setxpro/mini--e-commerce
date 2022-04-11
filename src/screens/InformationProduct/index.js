@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Produtos } from '../../data/Produtos';
 import { Layout } from '../../Styles/Layout/styles';
 import { Link, useParams } from 'react-router-dom';
@@ -7,12 +7,15 @@ import Spinner from '../../utils/Spinner';
 
 import * as C from './styles';
 import Comments from '../../Components/Comments';
+import { CartContext } from '../../Context/CartContext';
 
 function InformationProduct() {
 
     const { id } = useParams();
     const [produto, setProduto] = useState('');
     const [loadindProd, setLoadingProd] = useState(true);
+
+    const { addproduct } = useContext(CartContext);
 
     useEffect(() => {
 
@@ -60,7 +63,7 @@ function InformationProduct() {
                                     </select>  
                                 </div>
                                  ) : alert('Não há mais unidades no estoque :(')}
-                                <button>Adicionar ao Carrinho</button>
+                                <button onClick={addproduct}>Adicionar ao Carrinho</button>
                             </C.AreaInfoDescription>
 
                         <C.AreaFormPayment>
